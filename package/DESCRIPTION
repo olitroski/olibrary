@@ -1,0 +1,13 @@
+Package: olibrary
+Title: Olito's Library
+Version: 0.9.0
+Authors@R: 
+    person(given = "Oliver",
+           family = "Rojas",
+           role = c("aut", "cre"),
+           email = "olitroski@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Simple statistics for exploratory analysis.
+License: GNU-3
+Encoding: UTF-8
+LazyData: true
