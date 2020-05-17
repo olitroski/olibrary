@@ -1,9 +1,13 @@
 # El directorio se crea con... directo al directorio
-create("C:/Users/olitr/Desktop/lepack")
+library(devtools)
+create("package")
+
 
 # Agrgar librerias la descricion
-use_package("dplyr")
+use_package("ggplot2")
 use_package("stringr")
+use_package("lubridate")
+use_package("dplyr")
 
 # ---- Editar los script ----
 # Carga los script a la memoria para edicion y todo. En <build> está también
