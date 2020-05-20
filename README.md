@@ -5,18 +5,25 @@ La idea principal es contar con set de funciones para hacer estadística explora
 
 ## Instalación
 
-La mejor forma será usar `devtools` para cargar desde github.com la vuelta sería la siguiente.
+La mejor forma será usar `devtools` para cargar desde github.com la vuelta sería la siguiente. Ojo que el devtools demora harto en instalar.
 
 ```R
 # Instalar y cargar devtools
-install.packages("devtools")
+install.packages("devtools", type = "source")
 library("devtools")
 
 # Instalar
 install_github("olitroski/olibrary")
+library("olibrary")
+help(package = "olibrary")
 ```
+Puede ser necesario tener instalado previamente **Rtools** en el caso de Windows o **Xcode** para MacOS. En caso de no poder instalar por obtener errores se pueden hacer los siguientes chequeos.
 
-Puede ser necesario tener instalado previamente **Rtools** en el caso de Windows o **Xcode** para MacOS. 
+* La versión de R es muy moderna: R 4.0 tiene problemas al dia de hoy con devtools, instalar mejor la versión 3.6.3
+* En ocasiones por temas de permisos y actualizaciones no se permite borrar automaticamente un paquete, generalmente se puede re-instalar manualmente con install.packages(lib, type = "source)
+* Preferir install.packages(lib, type = "source") porque asi no compila o instala librerias muy modernas
+* Si todo falla, borrar todos los paquetes y reinstalar. En el caso de Windows en la carpeta documentos hay una carpeta R que dentro tiene las librerías, hay que borrar, luego desinstalar el R y reinstalar uno nuevo.
+* Si ya nada funciona, descargar el repositorio e instalar manualmente.
 
 ## Funciones incluidas
 
