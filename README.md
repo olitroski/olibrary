@@ -80,6 +80,16 @@ ordervar <- function(datos, varmove, after = 1)
 
 Análogo a `order` de Stata. Mueve variables para ordenar una base de datos, se puede ingresar un vector de texto para varias variables, incluye un after que puede ser numero o texto
 
+#### otext_clean
+
+Para quitar tildes, números y espacios demás.
+
+```
+otext_clean("olá,    k3 ase....")
+```
+
+
+
 ### Estadísticas
 
 #### osumm
