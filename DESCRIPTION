@@ -13,4 +13,6 @@ Imports:
     stringr,
     lubridate,
     dplyr,
-    tidyr
+    tidyr,
+    openxlsx,
+    lazyeval
