@@ -13,7 +13,7 @@ otext_clean(txt)
 char texto limpio
 }
 \description{
-Quita las puntuaciones, espacios, tildes, numeros de un un texto.
+Quita las puntuaciones, espacios, tildes, números de un un texto.
 }
 \examples{
 otext_clean("texto con tildes")

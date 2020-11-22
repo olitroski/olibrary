@@ -1,5 +1,5 @@
 #' @title Olito Text Cleaner
-#' @description Quita las puntuaciones, espacios, tildes, numeros de un un texto.
+#' @description Quita las puntuaciones, espacios, tildes, números de un un texto.
 #' @param txt texto a limpiar
 #' @return char texto limpio
 #' @export
@@ -9,18 +9,19 @@
 #'
 otext_clean <- function(txt){
     # letras solas rodeadas de espacio
-    text <- str_replace_all(txt, "\\s[bcdefghjklmnopqrstuvwxyz]\\s", " ")   # letras guachas
+    text <- tolower(txt)
+    text <- str_replace_all(text, "\\s[bcdefghjklmnopqrstuvwxyz]\\s", " ")   # letras guachas
 
     # Punctuacion
-    text <- str_replace_all(text, "[[:punct:]]", " ") # puntuaciones
+    text <- str_replace_all(text, "[[:punct:]]", " ")
 
-    # Acentos y ñ
-    text <- str_replace_all(text, "á", "a")
-    text <- str_replace_all(text, "é", "e")
-    text <- str_replace_all(text, "í", "i")
-    text <- str_replace_all(text, "ó", "o")
-    text <- str_replace_all(text, "ú", "u")
-    text <- str_replace_all(text, "ñ", "n")
+    # Acentos y enie
+    text <- str_replace_all(text, "\u00E1", "a")
+    text <- str_replace_all(text, "\u00E9", "e")
+    text <- str_replace_all(text, "\u00ED", "i")
+    text <- str_replace_all(text, "\u00F3", "o")
+    text <- str_replace_all(text, "\u00FA", "u")
+    text <- str_replace_all(text, "\u00F1", "n")
 
     # Numeros
     text <- str_replace_all(text, "[[:digit:]]", " ")
@@ -31,4 +32,5 @@ otext_clean <- function(txt){
 
     return(text)
 }
-# otext_clean(text)
+
+
