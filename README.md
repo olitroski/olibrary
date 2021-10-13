@@ -129,3 +129,13 @@ Calcula una tabla de frecuencias o una de contingencia en caso de agregar dos va
 ```
 
 Por ejemplo los porcentajes por fila
+
+
+
+
+
+## Test
+
+Probar una imagen
+
+![](img/github-octocat.png)
