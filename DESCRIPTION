@@ -16,4 +16,6 @@ Imports:
     tidyr,
     openxlsx,
     lazyeval,
-    Hmisc
+    Hmisc,
+    data.table,
+    janitor
