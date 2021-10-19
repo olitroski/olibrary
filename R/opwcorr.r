@@ -17,6 +17,7 @@
 #' # ocorr(c("mpg", "cyl", "qsec"), data = mtcars)
 #' @importFrom Hmisc rcorr
 #' @importFrom stringr str_split
+#' @importFrom dplyr rename
 
 ocorr <- function(target = NULL, indep = NULL, grpvar = NULL, data = NULL, type = "pearson"){
     # For test

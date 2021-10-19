@@ -14,11 +14,12 @@
 #' # grpvar <- c("am", "vs")
 #' # osumm(numvar, data = mtcars)
 #' # osumm(numvar, grpvar, data = mtcars)
-#' @import dplyr
 #' @importFrom stats reshape
 #' @importFrom stats sd
 #' @importFrom stats shapiro.test
 #' @importFrom utils write.table
+#' @importFrom dplyr bind_cols
+#' @importFrom dplyr rename
 #'
 
 osumm <- function(numvar, grpvar = NULL, data, rnd = 2, clip = FALSE ){

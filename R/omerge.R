@@ -19,7 +19,15 @@
 #' # omerge(xdf, ydf, "cars", output = FALSE)
 #' # omerge(xdf, ydf, "cars", keep = TRUE)
 #' # omerge(xdf, ydf, "cars", keep = TRUE, output = FALSE)
-#' @import dplyr
+#' @importFrom dplyr mutate
+#' @importFrom dplyr select
+#' @importFrom dplyr group_by
+#' @importFrom dplyr summarise
+#' @importFrom dplyr bind_rows
+#' @importFrom dplyr arrange
+#' @importFrom dplyr filter
+#' @importFrom dplyr rename
+#' @importFrom dplyr desc
 #'
 omerge <- function(xdf = NULL, ydf = NULL, byvar = NULL, keep = FALSE, output = TRUE){
     fromX <- fromY <- Status <- indx <- NULL

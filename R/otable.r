@@ -21,7 +21,9 @@
 #' @importFrom dplyr select
 #' @importFrom dplyr mutate
 #' @importFrom janitor adorn_totals
-#' @import data.table
+#' @importFrom data.table setDT
+#' @importFrom data.table .N
+
 
 otable <- function(rvar = NULL, cvar = NULL, data = NULL, clip = 0){
     # Los bindings
@@ -65,7 +67,7 @@ otable <- function(rvar = NULL, cvar = NULL, data = NULL, clip = 0){
         }
 
         # Tabla madre
-        dt <- data[, .N, by = .(get(rvar), get(cvar))]
+        dt <- data[, .N, by = list(get(rvar), get(cvar))]
         names(dt) <- c(rvar, cvar, "N")
         dt <- reshape(dt, timevar = cvar, idvar = rvar, direction = "wide")
 

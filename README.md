@@ -132,15 +132,3 @@ Por ejemplo los porcentajes por fila
 
 
 
-
-
-## Test
-
-Probar una imagen
-
-![](img/github-octocat.png)
-
-
-
-> Edición por otro usuario 
-

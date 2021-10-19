@@ -12,10 +12,14 @@
 #' # depvar <- "hp"
 #' # varlist <- c("mpg", "disp", "drat", "hp")
 #' # ottest.indep(varlist, grpvar, mtcars)
-#' @import dplyr
 #' @import openxlsx
 #' @importFrom stats t.test
 #' @importFrom lazyeval interp
+#' @importFrom dplyr select
+#' @importFrom dplyr group_by_
+#' @importFrom dplyr summarize_
+#' @importFrom dplyr rename
+#' @importFrom dplyr select_
 #'
 ottest.indep <- function(varlist = NULL, grpvar = NULL, data = NULL, version = 1, save = "file"){
 
