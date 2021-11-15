@@ -1,6 +1,6 @@
 Package: olibrary
 Title: Personal olito's library
-Version: 0.0.10
+Version: 0.2021.11.15
 Authors@R: person("Oliver", "Rojas", email = "oliver.rojas.b@gmail.com", role = c("aut", "cre"))
 Description: Libreria personal para estadisticas exploratorias.
 License: GPL-3
@@ -18,4 +18,7 @@ Imports:
     lazyeval,
     Hmisc,
     data.table,
-    janitor
+    janitor,
+    DBI,
+    RSQLite,
+    glue
