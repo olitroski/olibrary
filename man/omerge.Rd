@@ -4,7 +4,14 @@
 \alias{omerge}
 \title{wrapper de merge estilo stata}
 \usage{
-omerge(xdf = NULL, ydf = NULL, byvar = NULL, keep = FALSE, output = TRUE)
+omerge(
+  xdf = NULL,
+  ydf = NULL,
+  byvar = NULL,
+  keep = TRUE,
+  output = TRUE,
+  old = FALSE
+)
 }
 \arguments{
 \item{xdf}{DataFrame, con "idvar" actua de "master"}
@@ -13,15 +20,19 @@ omerge(xdf = NULL, ydf = NULL, byvar = NULL, keep = FALSE, output = TRUE)
 
 \item{byvar}{String, Variable idvar}
 
-\item{keep}{Logical, si guarda o no el resultado, si no solo da el reporte}
+\item{keep}{Logical, si guarda o no el resultado, si no solo da el reporte y un NULL}
 
 \item{output}{Logical, si muestra o no el output}
+
+\item{old}{Retro compatibilidad, si TRUE devuelve la lista con el merge separado}
 }
 \value{
-Lista con el merge separado en solo using, master, merge y un reporte
+Lista con el merge separado en solo using, master, merge y un reporte, version nueva solo el data.table
 }
 \description{
-Junta dos bases de datos con un merge y reporteria
+Junta dos bases de datos con un merge y reporteria,
+si da error puede ser que la version de la funcion se antigua. Entonces usar la opciones old = TRUE
+asi el output sera como en la version original: una lista. La version old = FALSE es un data.table
 }
 \examples{
 # Datos para cruzar
@@ -30,9 +41,8 @@ Junta dos bases de datos con un merge y reporteria
 # xdf <- data[-c(1:8),   c("cars", "mpg", "cyl", "disp", "hp", "drat", "wt")]
 # ydf <- data[-c(26:32), c("cars", "qsec", "vs", "am", "gear", "carb")]
 #
-# omerge(xdf, ydf, "cars")
+# omerge(xdf, ydf, "cars", keep = FALSE)
 # omerge(xdf, ydf[, c("cars", "vs")], byvar = "cars")
-# omerge(xdf, ydf, "cars", output = FALSE)
-# omerge(xdf, ydf, "cars", keep = TRUE)
-# omerge(xdf, ydf, "cars", keep = TRUE, output = FALSE)
+# omerge(xdf, ydf, "cars", output = FALSE, old = TRUE)
+# omerge(xdf, ydf, "cars", keep = FALSE, output = FALSE)
 }

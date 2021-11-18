@@ -18,6 +18,8 @@
 #' @importFrom Hmisc rcorr
 #' @importFrom stringr str_split
 #' @importFrom dplyr rename
+#' @importFrom dplyr filter
+#'
 
 ocorr <- function(target = NULL, indep = NULL, grpvar = NULL, data = NULL, type = "pearson"){
     # For test
