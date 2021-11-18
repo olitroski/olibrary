@@ -27,7 +27,7 @@
 #' @importFrom data.table setnames
 #'
 omerge <- function(xdf = NULL, ydf = NULL, byvar = NULL, keep = TRUE, output = TRUE, old = FALSE){
-    fromX <- fromY <- Status <-
+    fromX <- fromY <- Status <- NULL
 
     # Guardar nombres variables
     xnames <- names(xdf)
@@ -55,7 +55,7 @@ omerge <- function(xdf = NULL, ydf = NULL, byvar = NULL, keep = TRUE, output = T
     labels <- c("Master", "Using", "Match")
     labels <- labels[!(labels %in% tabla$Status)]
     if (length(labels) > 0){
-        tabla <- rbind(tabla, data.frame(Status = labels, Conteo = 0, stringsAsFactors = FALSE))
+        tabla <- rbind(tabla, data.frame(Status = labels, N = 0, stringsAsFactors = FALSE))
     }
 
     # Terminar la tabla
