@@ -5,14 +5,14 @@
 #' @examples
 #' # selectWD()
 #' @importFrom stringr str_split
+#' @importFrom glue glue
+#' @importFrom clipr write_clip
 selectWD <- function(){
     wd <- file.choose()
     wd <- as.character(str_split(wd, "\\\\", simplify = TRUE))
     wd <- wd[1:length(wd)-1]
     wd <- paste(wd, collapse = '/')
-    # mainDir <<- wd
-    setwd(wd)
-    return(wd)
+    cat(glue("{wd}\n"))
+    wd <- glue("setwd('{wd}')")
+    write_clip(wd, object_type = "character")
 }
-
-
