@@ -20,7 +20,7 @@ simText <- function(test = NULL, txtvector = NULL, excluye = c(NA, "", " ")){
     # y el mas parecido
     } else {
         similar <- stringsim(test, txtvector)
-        similar <- which(similar == max(similar))
+        similar <- which.max(similar)
         similar <- txtvector[similar]
 
         # Si hay más de 1 devuelve el primero
