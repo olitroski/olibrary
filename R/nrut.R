@@ -12,7 +12,7 @@
 #'
 nrut <- function(df, var, format = TRUE){
     if (format == TRUE){
-        return(format(length(unique(df[[var]])), nsmall = 0, big.mark = '.'))
+        return(format(length(unique(df[[var]])), nsmall = 0, big.mark = '.', decimal.mark = ','))
     } else {
         return(length(unique(df[[var]])))
     }
