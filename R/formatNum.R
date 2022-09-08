@@ -41,9 +41,15 @@ formatNum <- function(num, decimal = 0, sep = '.'){
             return (temp)
 
         } else {
-            temp <- as.numeric(num)
-            temp <- format(temp, nsmall = decimal, big.mark = sep)
-            return (temp)
+            if (sep == '.'){
+                temp <- as.numeric(num)
+                temp <- format(temp, nsmall = decimal, big.mark = sep, decimal.mark = ',')
+                return(temp)
+            } else {
+                temp <- as.numeric(num)
+                temp <- format(temp, nsmall = decimal, big.mark = sep)
+                return(temp)
+            }
         }
     } else {
         stop("Error desconocido...XD")
