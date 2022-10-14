@@ -10,7 +10,7 @@
 #' # nrut(data, 'id')
 #' # nrut(data, 'id', format = FALSE)
 #'
-nrut <- function(df, var, format = TRUE){
+nrut <- function(df, var, format = FALSE){
     if (format == TRUE){
         return(format(length(unique(df[[var]])), nsmall = 0, big.mark = '.', decimal.mark = ','))
     } else {
