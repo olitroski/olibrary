@@ -20,7 +20,7 @@
 #' @importFrom utils write.table
 #' @importFrom dplyr bind_cols
 #' @importFrom dplyr rename
-#'
+#' @importFrom methods is
 
 osumm <- function(numvar, grpvar = NULL, data, rnd = 2, clip = FALSE ){
     # numvar <- "mpg"
@@ -34,14 +34,16 @@ osumm <- function(numvar, grpvar = NULL, data, rnd = 2, clip = FALSE ){
 
     # Algunos chequeos
     for (num in numvar){
-        if (class(data[[num]]) != "numeric"){
+        # if (class(data[[num]]) != "numeric"){
+        if (!is(data[[num]], "numeric")){
             stop(paste("Variable:", num, "es -no numerica-"))
         }
     }
 
 
     # Determinar la base de datos, segun exista grupo o no
-    if (class(grpvar) == "NULL"){
+    # if (class(grpvar) == "NULL"){
+    if (is(grpvar,"NULL")){
         df <- data[numvar]
 
     } else {
@@ -105,7 +107,7 @@ osumm <- function(numvar, grpvar = NULL, data, rnd = 2, clip = FALSE ){
 
 
     # Resultado dependiendo de si hay grupo
-    if (class(grpvar) == "NULL"){
+    if (is(grpvar, "NULL")){
         # Esta es directa y sencilla
         resultado <- as.data.frame(resultado)
         resultado <- reshape(resultado, varying = 1:ncol(resultado), timevar = "variable", direction = "long")

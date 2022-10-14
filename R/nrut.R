@@ -12,9 +12,25 @@
 #'
 nrut <- function(df, var, format = FALSE){
     if (format == TRUE){
-        return(format(length(unique(df[[var]])), nsmall = 0, big.mark = '.', decimal.mark = ','))
+        return(
+            format(
+                as.numeric(
+                    length(
+                        unique(df[[var]])
+                    )
+                ),
+                nsmall = 0, big.mark = '.', decimal.mark = ',')
+        )
+    } else if (format == FALSE){
+        return(
+            as.numeric(
+                length(
+                    unique(df[[var]])
+                )
+            )
+        )
     } else {
-        return(length(unique(df[[var]])))
+        stop("algo paso")
     }
 }
 

@@ -23,6 +23,7 @@
 #' @importFrom janitor adorn_totals
 #' @importFrom data.table setDT
 #' @importFrom data.table .N
+#' @importFrom methods is
 
 
 otable <- function(rvar = NULL, cvar = NULL, data = NULL, clip = 0){
@@ -30,7 +31,8 @@ otable <- function(rvar = NULL, cvar = NULL, data = NULL, clip = 0){
     Freq <- total <- NULL
 
     # Si es que si lo hay row var (1 variable)
-    if (class(cvar) == "NULL"){
+    # if (class(cvar) == "NULL"){
+    if (is(cvar, "NULL")){
         # Tablas
         df <- paste("table(data$", rvar, ")", sep = "")
         df <- eval(parse(text=df))

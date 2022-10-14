@@ -30,7 +30,7 @@
 #' @importFrom DBI dbWriteTable
 #' @importFrom DBI dbGetQuery
 #' @importFrom DBI dbDisconnect
-#'
+#' @importFrom methods is
 #'
 sqlMerge <- function(x = NULL, y = NULL, by = NULL, drop = TRUE, replace = FALSE){
     mergeX <- mergeY <- temp <- NULL
@@ -38,7 +38,8 @@ sqlMerge <- function(x = NULL, y = NULL, by = NULL, drop = TRUE, replace = FALSE
     # Testear la clase porque debe venir como
     if (length(class(x)) > 1 | length(class(y)) > 1){
         stop("clase > 2, solo debe ser data.frame")
-    } else if (class(x) != "data.frame" | class(y) != "data.frame"){
+    # } else if (class(x) != "data.frame" | class(y) != "data.frame"){
+    } else if (!is(x, "data.frame") | !is(y, "data.frame")){
         stop("clase debe ser data.frame")
     }
 

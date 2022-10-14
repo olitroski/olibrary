@@ -7,7 +7,7 @@
 #' # data(mtcars)
 #' # clipTab(mtcars)
 #'
-clipTab <- function(df){
+ocliptab <- function(df = NULL){
     write.table(df, "clipboard-128", sep="\t", row.names=FALSE)
     cat("Tabla pegada al portapapeles... \n")
 }
