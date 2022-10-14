@@ -4,7 +4,7 @@
 \alias{nrut}
 \title{Olito's function para calcular un distinct en una tabla}
 \usage{
-nrut(df, var, format = TRUE)
+nrut(df, var, format = FALSE)
 }
 \arguments{
 \item{df}{data.frame o data.table}
